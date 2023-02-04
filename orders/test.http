@@ -1,0 +1,181 @@
+POST http://127.0.0.1:8000/api/v1/user/login/ HTTP/1.1
+Content-Type: application/json
+
+{
+   "password":"**********",
+   "email":"4test@test.ru"
+}
+
+###
+
+POST http://127.0.0.1:8000/api/v1/shop/import/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 1a599726f23ad455dca455ca99f575db95a847aa
+
+{
+   "url": "http://mho-cdn/games/1/shop.yaml"
+}
+
+###
+GET http://127.0.0.1:8000/api/v1/product/ HTTP/1.1
+Content-Type: application/json
+
+# {
+#    "shop_id":2
+# }
+
+###
+
+GET http://127.0.0.1:8000/api/v1/product/8/ HTTP/1.1
+
+###
+GET http://127.0.0.1:8000/api/v1/basket/ HTTP/1.1
+Authorization: Token 72fe15bfa8b74e35f275d83abbb43366a6bfb28d
+
+###
+POST http://127.0.0.1:8000/api/v1/basket/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 72fe15bfa8b74e35f275d83abbb43366a6bfb28d
+
+{
+   "items": [
+      {
+        "model_id": 10,
+        "quantity": 8 
+      }
+   ]
+}
+
+###
+DELETE http://127.0.0.1:8000/api/v1/basket/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 1a599726f23ad455dca455ca99f575db95a847aa
+
+{
+   "items": [ 10 ]
+}
+
+###
+
+GET http://127.0.0.1:8000/api/v1/contacts/ HTTP/1.1
+Authorization: Token 200b83a785948211d5cf979eb961c3013363cb6f
+
+###
+POST http://127.0.0.1:8000/api/v1/contacts/ HTTP/1.1
+Authorization: Token 200b83a785948211d5cf979eb961c3013363cb6f
+Content-Type: application/json
+
+{
+   "city": "Pishma",
+   "street": "Lenina",
+   "house": "54",
+   "phone_number": "345285515"
+}
+
+###
+DELETE http://127.0.0.1:8000/api/v1/contacts/11/ HTTP/1.1
+Authorization: Token 200b83a785948211d5cf979eb961c3013363cb6f
+
+###
+
+PUT http://127.0.0.1:8000/api/v1/contacts/12/ HTTP/1.1
+Authorization: Token 200b83a785948211d5cf979eb961c3013363cb6f
+Content-Type: application/json
+
+{
+   "house": 12,
+   "city": "moscow",
+   "street": "Lenina"
+}
+
+###
+POST http://127.0.0.1:8000/api/v1/confirmation/ HTTP/1.1
+Authorization: Token 72fe15bfa8b74e35f275d83abbb43366a6bfb28d
+Content-Type: application/json
+
+{
+   "contact_id": 10
+}
+
+###
+
+POST http://127.0.0.1:8000/api/v1/shop/stauts/ HTTP/1.1
+Authorization: Token 1a599726f23ad455dca455ca99f575db95a847aa
+Content-Type: application/json
+
+{
+   "status": "True"
+}
+
+###
+
+GET http://127.0.0.1:8000/api/v1/shop/orders/ HTTP/1.1
+Authorization: Token 1a599726f23ad455dca455ca99f575db95a847aa
+
+
+###
+
+POST http://127.0.0.1:8000/api/v1/user/register/ HTTP/1.1
+Content-Type: application/json
+
+{
+   "password":"**********",
+   "email":"alexey.tomilovskikh@gmail.com",
+   "usertype":"buyer",
+   "first_name":"Alexey",
+   "last_name":"Tomilovskikh"
+}
+
+###
+
+POST http://127.0.0.1:8000/api/v1/user/login/ HTTP/1.1
+Content-Type: application/json
+
+{
+   "password":"**********",
+   "email":"alexey.tomilovskikh@gmail.com"
+}
+
+###
+
+POST http://127.0.0.1:8000/api/v1/user/password_reset/ HTTP/1.1
+Content-Type: application/json
+
+{
+   "email":"alexey.tomilovskikh@gmail.com"
+}
+
+
+###
+
+POST http://127.0.0.1:8000/api/v1/user/password_reset/confirm/
+Content-Type: application/json
+
+{
+   "password":"**********",
+   "token":""
+}
+
+###
+GET http://127.0.0.1:8000/api/v1/orders/3/ HTTP/1.1
+Authorization: Token 200b83a785948211d5cf979eb961c3013363cb6f
+
+###
+GET http://127.0.0.1:8000/api/v1/user/ HTTP/1.1
+Authorization: Token 17adc112bbe06cf8d53777de74e8b3f4f9ac1c53
+
+###
+PUT http://127.0.0.1:8000/api/v1/user/ HTTP/1.1
+Authorization: Token 17adc112bbe06cf8d53777de74e8b3f4f9ac1c53
+Content-Type: application/json
+
+{
+   "username":"Bad Guy",
+   "token":""
+}
+
+###
+GET http://127.0.0.1:8000/api/v1/shops/ HTTP/1.1
+
+###
+GET http://127.0.0.1:8000/api/v1/category/ HTTP/1.1
